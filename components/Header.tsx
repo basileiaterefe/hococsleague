@@ -76,7 +76,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-line bg-navy/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="rounded-lg">
-          <Logo />
+          <Logo priority />
         </Link>
         <nav className="hidden lg:block" aria-label="Primary">
           <ul className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1">

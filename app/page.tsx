@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { Icon } from "@/components/Icon";
+import { Logo } from "@/components/Logo";
 import { TodoText } from "@/components/TodoText";
 
 export const metadata = pageMetadata("home");
@@ -37,23 +38,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mx-auto hidden w-full max-w-xs lg:block" aria-hidden="true">
-            <div className="rounded-[2rem] border border-white/15 bg-black/30 p-8 backdrop-blur-sm">
-              <svg viewBox="0 0 120 140" className="mx-auto h-48 w-40 text-white">
-                <path
-                  fill="currentColor"
-                  d="M60 8 108 26v34c0 28-18 48-48 62-30-14-48-34-48-62V26L60 8z"
-                  opacity="0.95"
-                />
-                <path
-                  fill="none"
-                  stroke="#0A0A0A"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M42 74 34 66 42 58M78 58 86 66 78 74M50 88 70 52"
-                />
-              </svg>
-              <p className="mt-4 text-center text-sm font-semibold tracking-wide text-muted">
+            <div className="flex flex-col items-center rounded-[2rem] border border-white/15 bg-black/30 px-8 py-10 backdrop-blur-sm">
+              <Logo size="lg" showWordmark={false} priority />
+              <p className="mt-5 text-center text-sm font-semibold tracking-wide text-muted">
                 CTF and hackathons
               </p>
             </div>
