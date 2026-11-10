@@ -7,6 +7,7 @@ import { rootMetadata } from "@/lib/seo";
 import { Footer } from "@/components/Footer";
 import { HashScroll } from "@/components/HashScroll";
 import { Header } from "@/components/Header";
+import { SilkBackdrop } from "@/components/SilkBackdrop";
 import "./globals.css";
 
 assertContent();
@@ -26,7 +27,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata = rootMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#0B1F3A",
+  themeColor: "#0A0A0A",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -41,7 +42,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable} h-full`}>
-      <body className="flex min-h-full flex-col antialiased">
+      <body className="relative flex min-h-full flex-col antialiased">
+        <SilkBackdrop />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

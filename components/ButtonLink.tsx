@@ -2,10 +2,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const variants = {
-  primary: "bg-navy text-white hover:bg-navy-800",
-  accent: "bg-teal text-navy hover:bg-[#0f9e8f]",
-  inverse: "bg-white text-navy hover:bg-surface",
-  ghost: "border border-navy/15 bg-white text-navy hover:bg-surface",
+  primary: "bg-white text-navy hover:bg-zinc-200",
+  accent: "bg-white text-navy hover:bg-zinc-200",
+  inverse: "border border-white/20 bg-transparent text-white hover:bg-white/10",
+  ghost: "border border-white/20 bg-transparent text-white hover:bg-white/10",
 };
 
 export function ButtonLink({
@@ -22,7 +22,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-center text-sm font-semibold transition-colors ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-center text-sm font-semibold transition-colors ${variants[variant]} ${className}`}
     >
       {children}
     </Link>

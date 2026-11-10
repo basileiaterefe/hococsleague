@@ -21,11 +21,11 @@ export default function GetInvolvedPage() {
         <Container>
           <div className="grid gap-5 md:grid-cols-2">
             {site.getInvolved.pathways.map((pathway) => (
-              <article key={pathway.id} className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy text-teal">
+              <article key={pathway.id} className="flex h-full flex-col rounded-2xl border border-line bg-card p-6 backdrop-blur-sm">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-navy">
                   <Icon name={pathway.icon} />
                 </span>
-                <h2 className="mt-5 text-2xl font-bold text-navy">{pathway.title}</h2>
+                <h2 className="mt-5 text-2xl font-bold text-ink">{pathway.title}</h2>
                 <p className="mt-3 flex-1 text-base leading-7 text-ink">
                   {pathway.body}
                   {pathway.id === "sponsor" ? (
@@ -38,7 +38,7 @@ export default function GetInvolvedPage() {
                 <div className="mt-6">
                   <a
                     href={"href" in pathway ? pathway.href : `#${pathway.id}`}
-                    className="inline-flex min-h-11 items-center justify-center rounded-xl bg-navy px-5 text-sm font-semibold text-white hover:bg-navy-800"
+                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-navy hover:bg-zinc-200"
                   >
                     {pathway.button}
                   </a>
@@ -52,10 +52,10 @@ export default function GetInvolvedPage() {
       <section id="compete" className="scroll-mt-24 bg-surface py-16 md:py-20">
         <Container className="grid items-start gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-navy">Compete</h2>
+            <h2 className="text-3xl font-bold text-ink">Compete</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink">
               Register here, or ask your school Head Coordinator to add you. See the{" "}
-              <Link href="/competitions#register" className="font-semibold text-teal-dark underline underline-offset-4">
+              <Link href="/competitions#register" className="font-semibold text-muted underline underline-offset-4">
                 steps to participate
               </Link>
               .
@@ -68,7 +68,7 @@ export default function GetInvolvedPage() {
       <section id="volunteer" className="scroll-mt-24 py-16 md:py-20">
         <Container className="grid items-start gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-navy">Volunteer</h2>
+            <h2 className="text-3xl font-bold text-ink">Volunteer</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink">
               Event day help, welcome desks, and division support all count. You do not need prior experience.
             </p>
@@ -80,11 +80,11 @@ export default function GetInvolvedPage() {
       <section id="sponsor" className="scroll-mt-24 bg-surface py-16 md:py-20">
         <Container className="grid items-start gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-navy">Sponsor</h2>
+            <h2 className="text-3xl font-bold text-ink">Sponsor</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink">
               Sponsorship funds go toward <TodoText value={site.getInvolved.sponsor.funds} />.
             </p>
-            <h3 className="mt-6 text-xl font-bold text-navy">{site.getInvolved.sponsor.heading}</h3>
+            <h3 className="mt-6 text-xl font-bold text-ink">{site.getInvolved.sponsor.heading}</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-7 text-ink">
               {site.getInvolved.sponsor.benefits.map((benefit) => (
                 <li key={benefit}>{benefit}</li>
@@ -94,7 +94,7 @@ export default function GetInvolvedPage() {
               {site.getInvolved.sponsor.contactLead}{" "}
               <Link
                 href={`/leadership#${sponsorContact.id}`}
-                className="font-semibold text-teal-dark underline underline-offset-4"
+                className="font-semibold text-muted underline underline-offset-4"
               >
                 {sponsorContact.name}
               </Link>
@@ -108,7 +108,7 @@ export default function GetInvolvedPage() {
       <section id="chapter" className="scroll-mt-24 py-16 md:py-20">
         <Container className="grid items-start gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold text-navy">Teachers and Advisors</h2>
+            <h2 className="text-3xl font-bold text-ink">Teachers and Advisors</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink">
               Use this form to ask about starting a chapter at your school. Teachers and advisors are welcome, and so are students organizing a new campus.
             </p>

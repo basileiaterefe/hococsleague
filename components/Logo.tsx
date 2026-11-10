@@ -1,6 +1,6 @@
-export function Logo({ inverted = false }: { inverted?: boolean }) {
-  const shield = inverted ? "#ffffff" : "#0B1F3A";
-  const mark = inverted ? "#0B1F3A" : "#14B8A6";
+export function Logo({ inverted = true }: { inverted?: boolean }) {
+  const shield = inverted ? "#ffffff" : "#0a0a0a";
+  const mark = inverted ? "#0a0a0a" : "#ffffff";
   const word = inverted ? "text-white" : "text-navy";
 
   return (

@@ -33,7 +33,7 @@ export function InitialsAvatar({
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex ${dimension} shrink-0 items-center justify-center rounded-full bg-navy font-bold text-white`}
+      className={`inline-flex ${dimension} shrink-0 items-center justify-center rounded-full bg-white font-bold text-navy`}
     >
       {initials(name)}
     </span>
@@ -54,20 +54,20 @@ export function PersonCard({
   return (
     <article
       id={person.id}
-      className="scroll-mt-24 rounded-2xl border border-line bg-white p-5 shadow-[0_8px_24px_rgba(11,31,58,0.05)]"
+      className="scroll-mt-24 rounded-2xl border border-line bg-card p-5 backdrop-blur-sm"
     >
       <div className="flex items-start gap-4">
         <InitialsAvatar name={person.name} photo={person.photo} />
         <div className="min-w-0">
           {eyebrow ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-dark">{eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">{eyebrow}</p>
           ) : null}
           {headingLevel === "h4" ? (
-            <h4 className="text-lg font-bold text-navy">
+            <h4 className="text-lg font-bold text-ink">
               <TodoText value={person.name} />
             </h4>
           ) : (
-            <h3 className="text-lg font-bold text-navy">
+            <h3 className="text-lg font-bold text-ink">
               <TodoText value={person.name} />
             </h3>
           )}

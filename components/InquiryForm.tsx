@@ -61,8 +61,8 @@ export function InquiryForm({ form }: { form: FormContent }) {
 
   if (success) {
     return (
-      <div className="rounded-2xl border border-line bg-white p-6 shadow-sm" role="status">
-        <h3 ref={statusRef} tabIndex={-1} className="text-xl font-bold text-navy">
+      <div className="rounded-2xl border border-line bg-card p-6 backdrop-blur-sm" role="status">
+        <h3 ref={statusRef} tabIndex={-1} className="text-xl font-bold text-ink">
           {site.formSuccessTitle}
         </h3>
         <p className="mt-3 text-base leading-7 text-ink">
@@ -70,7 +70,7 @@ export function InquiryForm({ form }: { form: FormContent }) {
         </p>
         <button
           type="button"
-          className="mt-6 inline-flex min-h-11 items-center rounded-xl border border-navy/15 px-5 text-sm font-semibold text-navy"
+          className="mt-6 inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-sm font-semibold text-white"
           onClick={() => setSuccess(false)}
         >
           Edit responses
@@ -80,8 +80,8 @@ export function InquiryForm({ form }: { form: FormContent }) {
   }
 
   return (
-    <form id={form.id} className="rounded-2xl border border-line bg-white p-6 shadow-sm" noValidate onSubmit={onSubmit}>
-      <h3 className="text-xl font-bold text-navy">{form.title}</h3>
+    <form id={form.id} className="rounded-2xl border border-line bg-card p-6 backdrop-blur-sm" noValidate onSubmit={onSubmit}>
+      <h3 className="text-xl font-bold text-ink">{form.title}</h3>
       <p className="mt-2 text-sm leading-6 text-muted">{form.intro}</p>
       <p className="mt-4 text-sm leading-6">
         <TodoText value={site.formPendingNotice} />
@@ -106,14 +106,14 @@ export function InquiryForm({ form }: { form: FormContent }) {
               setValues((current) => ({ ...current, [field.name]: next }));
             },
             className:
-              "mt-1 w-full rounded-xl border border-line bg-white px-3 py-2.5 text-base text-ink shadow-sm",
+              "mt-1 w-full rounded-xl border border-line bg-navy px-3 py-2.5 text-base text-ink",
           };
 
           return (
             <div key={field.name}>
-              <label htmlFor={inputId} className="text-sm font-semibold text-navy">
+              <label htmlFor={inputId} className="text-sm font-semibold text-ink">
                 {field.label}
-                {field.required ? <span className="text-teal-dark"> *</span> : null}
+                {field.required ? <span className="text-muted"> *</span> : null}
               </label>
               {field.type === "textarea" ? (
                 <textarea {...shared} rows={4} />
@@ -130,7 +130,7 @@ export function InquiryForm({ form }: { form: FormContent }) {
                 <input {...shared} type={field.type} />
               )}
               {error ? (
-                <p id={errorId} className="mt-1 text-sm font-medium text-red-800">
+                <p id={errorId} className="mt-1 text-sm font-medium text-red-300">
                   {error}
                 </p>
               ) : null}
@@ -141,7 +141,7 @@ export function InquiryForm({ form }: { form: FormContent }) {
       <p className="mt-4 text-xs text-muted">* Required</p>
       <button
         type="submit"
-        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-xl bg-navy px-5 text-sm font-semibold text-white hover:bg-navy-800"
+        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-navy hover:bg-zinc-200"
       >
         {form.submitLabel}
       </button>

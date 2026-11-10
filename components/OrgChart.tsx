@@ -9,14 +9,14 @@ function shortSchool(school?: string) {
 
 function Node({ person, label }: { person: Person; label?: string }) {
   return (
-    <article className="w-full max-w-xs rounded-2xl border border-line bg-white p-4 text-center shadow-[0_8px_24px_rgba(11,31,58,0.05)]">
+    <article className="w-full max-w-xs rounded-2xl border border-line bg-card p-4 text-center backdrop-blur-sm">
       {label ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-dark">{label}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">{label}</p>
       ) : null}
       <div className="mt-3 flex justify-center">
         <InitialsAvatar name={person.name} photo={person.photo} size="sm" />
       </div>
-      <h3 className="mt-3 text-base font-bold text-navy">
+      <h3 className="mt-3 text-base font-bold text-ink">
         <Link href={`#${person.id}`} className="underline-offset-4 hover:underline">
           {person.name}
         </Link>
@@ -31,8 +31,8 @@ function DepartmentBox({ department }: { department: Department }) {
   const isSchools = department.id === "schools";
 
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-4 shadow-[0_8px_24px_rgba(11,31,58,0.05)]">
-      <h3 className="text-base font-bold text-navy">
+    <article className="flex h-full flex-col rounded-2xl border border-line bg-card p-4 backdrop-blur-sm">
+      <h3 className="text-base font-bold text-ink">
         <Link href={`#department-${department.id}`} className="underline-offset-4 hover:underline">
           {department.name}
         </Link>
@@ -67,7 +67,7 @@ function StackBranch({
   return (
     <div className="rounded-2xl bg-surface p-4">
       <Node person={lead} />
-      <div className="ml-6 border-l-2 border-teal py-3 pl-4">
+      <div className="ml-6 border-l-2 border-white/30 py-3 pl-4">
         <Node person={vp} label={label} />
       </div>
     </div>
@@ -94,10 +94,10 @@ export function OrgChart() {
         </div>
         <div className="grid h-8 grid-cols-2" aria-hidden="true">
           <div className="flex justify-center">
-            <div className="h-full w-px bg-navy/30" />
+            <div className="h-full w-px bg-white/20" />
           </div>
           <div className="flex justify-center">
-            <div className="h-full w-px bg-navy/30" />
+            <div className="h-full w-px bg-white/20" />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-x-16">
@@ -109,14 +109,14 @@ export function OrgChart() {
           </div>
         </div>
         <div className="relative h-16" aria-hidden="true">
-          <div className="absolute top-0 left-1/4 h-4 w-px -translate-x-1/2 bg-navy/30" />
-          <div className="absolute top-0 left-3/4 h-4 w-px -translate-x-1/2 bg-navy/30" />
-          <div className="absolute top-4 right-1/4 left-1/4 h-px bg-navy/30" />
-          <div className="absolute top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-navy/30" />
-          <div className="absolute top-8 right-[16.67%] left-[16.67%] h-px bg-navy/30" />
-          <div className="absolute top-8 left-[16.67%] h-8 w-px -translate-x-1/2 bg-navy/30" />
-          <div className="absolute top-8 left-1/2 h-8 w-px -translate-x-1/2 bg-navy/30" />
-          <div className="absolute top-8 left-[83.33%] h-8 w-px -translate-x-1/2 bg-navy/30" />
+          <div className="absolute top-0 left-1/4 h-4 w-px -translate-x-1/2 bg-white/20" />
+          <div className="absolute top-0 left-3/4 h-4 w-px -translate-x-1/2 bg-white/20" />
+          <div className="absolute top-4 right-1/4 left-1/4 h-px bg-white/20" />
+          <div className="absolute top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-white/20" />
+          <div className="absolute top-8 right-[16.67%] left-[16.67%] h-px bg-white/20" />
+          <div className="absolute top-8 left-[16.67%] h-8 w-px -translate-x-1/2 bg-white/20" />
+          <div className="absolute top-8 left-1/2 h-8 w-px -translate-x-1/2 bg-white/20" />
+          <div className="absolute top-8 left-[83.33%] h-8 w-px -translate-x-1/2 bg-white/20" />
         </div>
         <div className="grid grid-cols-3 items-stretch gap-4">
           {site.departments.map((department) => (

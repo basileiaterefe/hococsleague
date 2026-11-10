@@ -58,8 +58,8 @@ export function StatCounter({
   }, [reduce, value]);
 
   return (
-    <div ref={ref} className="rounded-2xl border border-line bg-white p-6 text-center shadow-sm">
-      <p className="font-display text-4xl font-bold text-navy">
+    <div ref={ref} className="rounded-2xl border border-line bg-card p-6 text-center backdrop-blur-sm">
+      <p className="font-display text-4xl font-bold text-ink">
         {value === null ? <TodoText value={todo} /> : current}
       </p>
       <p className="mt-2 text-sm font-medium text-muted">{label}</p>

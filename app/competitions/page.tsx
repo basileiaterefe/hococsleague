@@ -20,7 +20,7 @@ export default function CompetitionsPage() {
       <PageHero title={site.competitions.heroTitle} lede={site.competitions.heroLede} />
       <section className="py-16 md:py-20">
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{overview.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{overview.heading}</h2>
           <p className="mt-5 text-lg leading-relaxed text-ink">
             {overview.before} <TodoText value={overview.teamFormat} />
             {overview.after}
@@ -29,14 +29,14 @@ export default function CompetitionsPage() {
       </section>
       <section id="ctf" className="scroll-mt-24 bg-surface py-16 md:py-20">
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{site.competitions.ctf.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{site.competitions.ctf.heading}</h2>
           <p className="mt-5 text-lg leading-relaxed text-ink">{site.competitions.ctf.body}</p>
           <p className="mt-5 text-lg leading-relaxed text-ink">
-            <Link href={`/leadership#${ctfLead.id}`} className="font-semibold text-teal-dark underline underline-offset-4">
+            <Link href={`/leadership#${ctfLead.id}`} className="font-semibold text-muted underline underline-offset-4">
               {ctfLead.name}
             </Link>{" "}
             is CTF Coordinator.{" "}
-            <Link href={`/leadership#${ctfVp.id}`} className="font-semibold text-teal-dark underline underline-offset-4">
+            <Link href={`/leadership#${ctfVp.id}`} className="font-semibold text-muted underline underline-offset-4">
               {ctfVp.name}
             </Link>{" "}
             is Co-VP.
@@ -45,18 +45,18 @@ export default function CompetitionsPage() {
       </section>
       <section id="hackathons" className="scroll-mt-24 py-16 md:py-20">
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{site.competitions.hackathon.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{site.competitions.hackathon.heading}</h2>
           <p className="mt-5 text-lg leading-relaxed text-ink">
             {site.competitions.hackathon.beforeHours}{" "}
             <TodoText value={site.competitions.hackathon.hours} />{" "}
             {site.competitions.hackathon.afterHours}
           </p>
           <p className="mt-5 text-lg leading-relaxed text-ink">
-            <Link href={`/leadership#${hackLead.id}`} className="font-semibold text-teal-dark underline underline-offset-4">
+            <Link href={`/leadership#${hackLead.id}`} className="font-semibold text-muted underline underline-offset-4">
               {hackLead.name}
             </Link>{" "}
             is Hackathon Coordinator.{" "}
-            <Link href={`/leadership#${hackVp.id}`} className="font-semibold text-teal-dark underline underline-offset-4">
+            <Link href={`/leadership#${hackVp.id}`} className="font-semibold text-muted underline underline-offset-4">
               {hackVp.name}
             </Link>{" "}
             is Co-VP.
@@ -65,11 +65,11 @@ export default function CompetitionsPage() {
       </section>
       <section id="register" className="scroll-mt-24 bg-surface py-16 md:py-20">
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{participate.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{participate.heading}</h2>
           <ol className="mt-8 space-y-5">
             {participate.steps.map((step, index) => (
-              <li key={index} className="flex gap-4 rounded-2xl border border-line bg-white p-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy font-display text-sm font-bold text-white">
+              <li key={index} className="flex gap-4 rounded-2xl border border-line bg-card p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white font-display text-sm font-bold text-navy">
                   {index + 1}
                 </span>
                 <p className="pt-1.5 text-base leading-7 text-ink">
@@ -83,7 +83,7 @@ export default function CompetitionsPage() {
                   ) : (
                     <>
                       {step.before}{" "}
-                      <Link href={step.linkHref} className="font-semibold text-teal-dark underline underline-offset-4">
+                      <Link href={step.linkHref} className="font-semibold text-muted underline underline-offset-4">
                         {step.linkLabel}
                       </Link>
                       {step.after}
@@ -97,7 +97,7 @@ export default function CompetitionsPage() {
       </section>
       <section id="rules" className="scroll-mt-24 py-16 md:py-20">
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{rules.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{rules.heading}</h2>
           <ul className="mt-6 list-disc space-y-3 pl-5 text-lg leading-relaxed text-ink">
             {rules.items.map((rule) => (
               <li key={rule}>{rule}</li>
@@ -110,11 +110,11 @@ export default function CompetitionsPage() {
       </section>
       <section id="calendar" className="scroll-mt-24 bg-surface py-16 md:py-20">
         <Container>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{calendar.heading}</h2>
-          <div className="mt-6 overflow-x-auto rounded-2xl border border-line bg-white">
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{calendar.heading}</h2>
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-line bg-card">
             <table className="min-w-full text-left text-sm">
               <caption className="sr-only">{calendar.caption}</caption>
-              <thead className="bg-navy text-white">
+              <thead className="bg-white/10 text-white">
                 <tr>
                   {calendar.columns.map((column) => (
                     <th key={column} scope="col" className="px-4 py-3 font-semibold">

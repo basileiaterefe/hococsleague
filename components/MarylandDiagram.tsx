@@ -9,7 +9,7 @@ export function MarylandDiagram() {
       <div className="relative mx-auto hidden max-w-3xl md:block">
         <svg
           viewBox="0 0 640 460"
-          className="pointer-events-none absolute inset-0 h-full w-full text-teal"
+          className="pointer-events-none absolute inset-0 h-full w-full text-white/40"
           aria-hidden="true"
         >
           <path
@@ -27,7 +27,7 @@ export function MarylandDiagram() {
             <County name={montgomery} />
           </div>
           <div className="col-start-2 row-start-2 flex items-center justify-center">
-            <div className="flex h-40 w-40 items-center justify-center rounded-full bg-navy px-4 text-center font-display text-lg font-bold text-white shadow-lg">
+            <div className="flex h-40 w-40 items-center justify-center rounded-full border border-white/20 bg-navy px-4 text-center font-display text-lg font-bold text-white shadow-lg">
               {diagram.center}
             </div>
           </div>
@@ -35,7 +35,7 @@ export function MarylandDiagram() {
             <County name={princeGeorges} />
           </div>
           <div className="col-start-2 row-start-3 flex items-end justify-center">
-            <p className="rounded-full border-2 border-teal bg-white px-4 py-3 text-center text-sm font-bold text-navy">
+            <p className="rounded-full border border-white bg-white px-4 py-3 text-center text-sm font-bold text-navy">
               {diagram.eventLabel}
             </p>
           </div>
@@ -43,7 +43,7 @@ export function MarylandDiagram() {
       </div>
 
       <div className="space-y-3 md:hidden">
-        <div className="rounded-2xl bg-navy px-4 py-6 text-center font-display text-lg font-bold text-white">
+        <div className="rounded-2xl border border-white/20 bg-navy px-4 py-6 text-center font-display text-lg font-bold text-white">
           {diagram.center}
         </div>
         <ul className="space-y-3">
@@ -53,7 +53,7 @@ export function MarylandDiagram() {
             </li>
           ))}
         </ul>
-        <p className="rounded-2xl border-2 border-teal bg-white px-4 py-3 text-center text-sm font-bold text-navy">
+        <p className="rounded-2xl border border-white bg-white px-4 py-3 text-center text-sm font-bold text-navy">
           {diagram.eventLabel}
         </p>
       </div>
@@ -66,14 +66,14 @@ export function MarylandDiagram() {
             <li
               key={`${step.title}-${index}`}
               className={`rounded-2xl p-5 ${
-                statewide ? "bg-navy text-white" : "border border-line bg-white text-ink"
+                statewide ? "bg-white text-navy" : "border border-line bg-card text-ink"
               }`}
             >
-              <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${statewide ? "text-teal" : "text-teal-dark"}`}>
+              <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${statewide ? "text-navy/60" : "text-muted"}`}>
                 {step.label}
               </p>
               <h3 className="mt-2 text-lg font-bold">{step.title}</h3>
-              <p className={`mt-2 text-sm leading-6 ${statewide ? "text-slate-200" : "text-muted"}`}>{step.body}</p>
+              <p className={`mt-2 text-sm leading-6 ${statewide ? "text-navy/70" : "text-muted"}`}>{step.body}</p>
             </li>
           );
         })}
@@ -84,7 +84,7 @@ export function MarylandDiagram() {
 
 function County({ name }: { name: string }) {
   return (
-    <p className="max-w-[12rem] rounded-2xl border border-line bg-white px-4 py-3 text-center text-sm font-semibold text-navy shadow-sm">
+    <p className="max-w-[12rem] rounded-2xl border border-line bg-card px-4 py-3 text-center text-sm font-semibold text-ink backdrop-blur-sm">
       {name}
     </p>
   );

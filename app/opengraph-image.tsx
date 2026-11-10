@@ -17,19 +17,19 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0B1F3A",
+          background: "#0A0A0A",
           color: "#ffffff",
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, color: "#14B8A6" }}>Howard County, Maryland</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#B0B0B0" }}>Howard County, Maryland</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 80, fontWeight: 700 }}>HOCO CS League</div>
-          <div style={{ marginTop: 20, fontSize: 32, color: "#D6E4F0", maxWidth: 860 }}>
+          <div style={{ marginTop: 20, fontSize: 32, color: "#B0B0B0", maxWidth: 860 }}>
             A student-run competitive computer science league for Howard County high schools.
           </div>
         </div>
-        <div style={{ display: "flex", fontSize: 26, color: "#14B8A6" }}>CTF competitions and hackathons</div>
+        <div style={{ display: "flex", fontSize: 26, color: "#B0B0B0" }}>CTF competitions and hackathons</div>
       </div>
     ),
     { ...size },

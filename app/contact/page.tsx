@@ -19,24 +19,24 @@ export default function ContactPage() {
       <section className="py-16 md:py-24">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <h2 className="text-2xl font-bold text-navy">Reach the league</h2>
+            <h2 className="text-2xl font-bold text-ink">Reach the league</h2>
             <p className="mt-4 text-lg">
               <span className="text-muted">Email: </span>
               {isTodo(site.email) ? (
                 <TodoText value={site.email} />
               ) : (
-                <a className="font-semibold text-teal-dark underline underline-offset-4" href={`mailto:${site.email}`}>
+                <a className="font-semibold text-muted underline underline-offset-4" href={`mailto:${site.email}`}>
                   {site.email}
                 </a>
               )}
             </p>
-            <h3 className="mt-8 text-lg font-bold text-navy">Social</h3>
+            <h3 className="mt-8 text-lg font-bold text-ink">Social</h3>
             <ul className="mt-3 space-y-2">
               {site.socials.map((social) => (
                 <li key={`${social.platform}-${social.handle}`}>
                   <TodoText value={social.platform} />{" "}
                   {social.href && !isTodo(social.href) ? (
-                    <a className="font-semibold text-teal-dark underline underline-offset-4" href={social.href}>
+                    <a className="font-semibold text-muted underline underline-offset-4" href={social.href}>
                       <TodoText value={social.handle} />
                     </a>
                   ) : (
@@ -47,13 +47,13 @@ export default function ContactPage() {
             </ul>
             <p className="mt-8 text-base leading-7 text-ink">
               {site.contact.partnershipsIntro}{" "}
-              <Link href={`/leadership#${outreach.id}`} className="font-semibold text-teal-dark underline underline-offset-4">
+              <Link href={`/leadership#${outreach.id}`} className="font-semibold text-muted underline underline-offset-4">
                 {outreach.name}
               </Link>
               , {outreach.title}, {site.contact.partnershipsJoin}{" "}
               <Link
                 href={`/leadership#${advertisement.id}`}
-                className="font-semibold text-teal-dark underline underline-offset-4"
+                className="font-semibold text-muted underline underline-offset-4"
               >
                 {advertisement.name}
               </Link>

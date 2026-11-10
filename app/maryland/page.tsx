@@ -14,7 +14,7 @@ export default function MarylandPage() {
       <PageHero title={site.maryland.heroTitle} lede={site.maryland.heroLede} />
       <section className="py-16 md:py-24">
         <Container>
-          <h2 className="text-3xl font-bold tracking-tight text-navy">{site.maryland.overview.heading}</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-ink">{site.maryland.overview.heading}</h2>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink">{site.maryland.overview.body}</p>
           <div className="mt-12">
             <MarylandDiagram />
@@ -24,11 +24,11 @@ export default function MarylandPage() {
       <section className="bg-surface py-16 md:py-24">
         <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-navy">{site.maryland.goal.heading}</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-ink">{site.maryland.goal.heading}</h2>
             <p className="mt-5 text-lg leading-relaxed text-ink">{site.maryland.goal.body}</p>
           </div>
-          <article className="rounded-2xl border border-line bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-navy">{site.maryland.firstEvent.heading}</h2>
+          <article className="rounded-2xl border border-line bg-card p-6 backdrop-blur-sm">
+            <h2 className="text-xl font-bold text-ink">{site.maryland.firstEvent.heading}</h2>
             <p className="mt-4 text-lg">
               <TodoText value={site.maryland.firstEvent.date} />
             </p>

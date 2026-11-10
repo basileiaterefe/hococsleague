@@ -73,7 +73,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-navy/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="rounded-lg">
           <Logo />
@@ -88,7 +88,7 @@ export function Header() {
                     href={item.href}
                     aria-current={current ? "page" : undefined}
                     className={`rounded-md text-sm font-semibold ${
-                      current ? "text-teal-dark" : "text-navy/80 hover:text-navy"
+                      current ? "text-white" : "text-muted hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -101,7 +101,7 @@ export function Header() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-navy lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white lg:hidden"
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpenPath(open ? null : pathname)}
@@ -113,7 +113,7 @@ export function Header() {
       {open ? (
         <button
           type="button"
-          className="fixed inset-0 top-16 z-40 bg-navy/40 lg:hidden"
+          className="fixed inset-0 top-16 z-40 bg-black/60 lg:hidden"
           aria-label="Close menu"
           onClick={() => closeMenu(true)}
         />
@@ -125,7 +125,7 @@ export function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Primary"
-        className="absolute inset-x-0 top-16 z-50 border-b border-line bg-white shadow-lg lg:hidden"
+        className="absolute inset-x-0 top-16 z-50 border-b border-line bg-navy/95 shadow-lg lg:hidden"
       >
         <nav aria-label="Mobile">
           <ul className="space-y-1 px-4 py-4">
@@ -137,7 +137,7 @@ export function Header() {
                     href={item.href}
                     aria-current={current ? "page" : undefined}
                     className={`flex min-h-11 items-center rounded-xl px-3 text-base font-semibold ${
-                      current ? "bg-foam text-teal-dark" : "text-navy hover:bg-surface"
+                      current ? "bg-white/10 text-white" : "text-muted hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {item.label}

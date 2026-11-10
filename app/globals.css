@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #0b1f3a;
-  --color-navy-800: #102848;
-  --color-ink: #122033;
-  --color-muted: #4b5b70;
-  --color-line: #e2e8f0;
-  --color-surface: #f4f7fb;
-  --color-teal: #14b8a6;
-  --color-teal-dark: #0f766e;
-  --color-foam: #e7f8f6;
+  --color-navy: #0a0a0a;
+  --color-navy-800: #161616;
+  --color-ink: #f4f4f4;
+  --color-muted: #b0b0b0;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-surface: rgba(14, 14, 14, 0.72);
+  --color-card: rgba(18, 18, 18, 0.82);
+  --color-teal: #ffffff;
+  --color-teal-dark: #d4d4d4;
+  --color-foam: #1a1a1a;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -25,7 +27,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #050505;
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
@@ -35,20 +37,17 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
+  color: var(--color-ink);
 }
 
 ::selection {
-  background: #14b8a6;
-  color: #0b1f3a;
+  background: #ffffff;
+  color: #0a0a0a;
 }
 
 :focus-visible {
-  outline: 2px solid #0f766e;
+  outline: 2px solid #ffffff;
   outline-offset: 3px;
-}
-
-.bg-navy :focus-visible {
-  outline-color: #99f6e4;
 }
 
 .skip-link {
@@ -59,14 +58,33 @@ h4 {
   transform: translateY(-200%);
   border-radius: 0.75rem;
   background: #ffffff;
-  color: #0b1f3a;
+  color: #0a0a0a;
   padding: 0.5rem 1rem;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.18);
 }
 
 .skip-link:focus {
   transform: none;
+}
+
+.silk-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.silk-backdrop img {
+  object-fit: cover;
+}
+
+.silk-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.42) 0%, rgba(5, 5, 5, 0.72) 42%, rgba(5, 5, 5, 0.88) 100%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 46%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
