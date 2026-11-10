@@ -38,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     description: site.seo.home.description,
     url: isTodo(site.url) ? undefined : site.url,
     areaServed: "Howard County, Maryland",
+    logo: isTodo(site.url) ? undefined : `${site.url.replace(/\/$/, "")}/logo.png`,
   };
 
   return (
